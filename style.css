@@ -110,3 +110,40 @@ ul {
 .content {
     grid-area: 2 / 2 / 3 / 3;
 }
+
+img {
+    height: 30px;
+    display: inline-block;
+}
+
+li > img + p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    justify-self: left;
+}
+
+div.sidebar > ul {
+    display: grid;
+    grid-template-rows: 3fr repeat(5, 1fr) 3fr repeat(3, 1fr) max(50px, 25vh);
+    row-gap: 1rem;
+}
+
+div.sidebar > ul > li {
+    display: grid;
+    grid-template-rows: 30px;
+    grid-template-columns: 50px 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+div.sidebar > ul > li > p {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+div.sidebar > ul > li:nth-child(1) > img,
+div.sidebar > ul > li:nth-child(1) > p {
+    height: 50px;
+    font-size: 2.2rem;
+}
