@@ -155,7 +155,7 @@ div.sidebar > ul > li:nth-child(1) > p {
 
 .search > ul {
     display: grid;
-    grid-template-columns: 7fr 1fr 1fr 2fr;
+    grid-template-columns: 7fr minmax(30px, 1fr) minmax(30px, 1fr) 2fr;
 }
 
 .search > ul > li {
@@ -169,7 +169,7 @@ div.sidebar > ul > li:nth-child(1) > p {
 
 .search-form {
     display: grid;
-    grid-template-columns: minmax(30px, 1fr) 10fr 2fr;
+    grid-template-columns: minmax(30px, 1fr) minmax(100px, 13fr);
     gap: 10px;
     align-items: center;
 }
