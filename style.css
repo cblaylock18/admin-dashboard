@@ -101,12 +101,13 @@ body {
 .container {
     display: grid;
     grid-template-columns: minmax(225px, 1fr) minmax(400px, 6fr);
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: minmax(1fr, 200px) min-content;
+    height: min-content;
 }
 
 .sidebar {
     grid-area: 1 / 1 / 3 / 2;
-    background-color: rgb(173, 217, 253);
+    background-color: #a7f3d0;
 }
 
 .header {
@@ -115,7 +116,8 @@ body {
 
 .content {
     grid-area: 2 / 2 / 3 / 3;
-    background-color: rgb(183, 200, 207);
+    background-color: #d1fae5;
+    box-shadow: inset 0 4px 7px -2px rgba(0, 0, 0, 0.2);
 }
 
 img {
@@ -162,10 +164,9 @@ div.sidebar > ul > li:nth-child(1) > p {
 
 .search > ul {
     display: grid;
-    grid-template-columns: 11fr minmax(30px, 1fr) minmax(30px, 1fr) minmax(
-            125px,
-            2fr
-        );
+    grid-template-columns:
+        minmax(100px, 11fr) minmax(30px, 1fr) minmax(30px, 1fr)
+        minmax(125px, 2fr);
     column-gap: 10px;
     padding-left: 30px;
 }
@@ -176,7 +177,12 @@ div.sidebar > ul > li:nth-child(1) > p {
 }
 
 .search > ul > li:nth-child(1) {
-    justify-self: left;
+    /* justify-content: left;*/
+    display: block;
+    /* grid-template-columns: 30px 1fr;
+    gap: 10px;
+    align-items: center;
+    width: 100%; */
 }
 
 .search > ul > li:nth-child(2) {
@@ -189,13 +195,16 @@ div.sidebar > ul > li:nth-child(1) > p {
 
 .search > ul > li:nth-child(4) {
     justify-self: left;
+    font-size: 1.4rem;
 }
 
 .search-form {
     display: grid;
-    grid-template-columns: minmax(30px, 1fr) clamp(100px, 45vw, 500px);
+    grid-template-columns: 30px minmax(100px, 1fr);
     gap: 10px;
     align-items: center;
+    justify-content: left;
+    width: 100%;
 }
 
 .search-form > label > img {
@@ -205,16 +214,17 @@ div.sidebar > ul > li:nth-child(1) > p {
 #search-bar {
     border-radius: 30px;
     border: none;
-    background-color: rgb(206, 223, 238);
+    background-color: #047857;
+    color: white;
     font-size: 1.4rem;
     padding: 0.3rem 15px;
 }
 
 .nav {
     display: grid;
-    grid-template-columns: minmax(50px, 1fr) minmax(100px, 7fr) repeat(
+    grid-template-columns: 75px minmax(100px, 7fr) repeat(
             3,
-            minmax(min-content, 1fr)
+            minmax(min-content, 150px)
         );
     place-items: center;
     gap: 16px;
@@ -245,10 +255,22 @@ div.sidebar > ul > li:nth-child(1) > p {
 .upload,
 .share {
     font-size: 1rem;
-    border: none;
+    font-weight: bolder;
+    border: 2px solid #a7f3d0;
     border-radius: 25px;
-    background-color: rgb(153, 213, 241);
-    padding: 10px 28px;
+    background-color: #a7f3d0;
+    height: 40px;
+    width: 100px;
+}
+
+button:hover {
+    border: 2px dotted #022c22;
+    background-color: #34d399;
+}
+
+button:active {
+    border: 2px solid #022c22;
+    background-color: #34d399;
 }
 
 .content {
@@ -301,7 +323,8 @@ h4,
     padding: 15px;
     background-color: white;
     border-radius: 8px;
-    border-left: 8px solid orange;
+    border-left: 8px solid #065f46;
+    box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.4);
 }
 
 .project-card > h3 {
@@ -322,6 +345,7 @@ h4,
     padding: 10px 30px 0px 30px;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.4);
 }
 
 .announcement-card {
@@ -343,17 +367,21 @@ h4,
     padding: 10px 20px 10px 20px;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.4);
+    margin-top: 15px;
 }
 
 .trending-card {
     display: grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 40px 1fr;
     grid-template-rows: 30px 30px;
     align-items: center;
+    column-gap: 10px;
 }
 
 .trending-card > img {
     grid-area: 1 / 1 / 3 / 2;
+    height: 40px;
 }
 
 .trending-card > p {
@@ -366,4 +394,24 @@ h4,
 .trending-card > p + p {
     grid-area: 2 / 2 / 3 / 3;
     align-self: start;
+}
+
+.profile {
+    border-radius: 50px;
+}
+
+.dog {
+    background-color: rgb(252, 206, 0);
+}
+
+.bird {
+    background-color: rgb(19, 220, 255);
+}
+
+.cat {
+    background-color: rgb(255, 160, 160);
+}
+
+.ladybug {
+    background-color: rgb(255, 71, 71);
 }
